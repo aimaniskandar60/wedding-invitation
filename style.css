@@ -1,0 +1,27 @@
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f7f5f2;
+  color: #4a4a4a;
+  text-align: center;
+  margin: 0;
+}
+
+header {
+  background-color: #dde5db;
+  padding: 50px 20px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+section {
+  padding: 40px 20px;
+}
+
+a {
+  color: #6b8e75;
+  text-decoration: none;
+  font-weight: bold;
+}
