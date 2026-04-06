@@ -1,93 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Aiman & Azzalea's Wedding</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+		<meta charset="UTF-8">
+		<title>Aiman & Azzalea's Wedding</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
 
-<header>
-  <h1 class="cursive-text">Aiman & Azzalea</h1>
-  <p>We're getting married!</p>
-  <p>Save the date: TBD</p>
-</header>
+	<body>
 
-<section>
-  <h2>Our Story</h2>
-  <p>Write your love story here...</p>
-</section>
+		<header>
+			<h1 class="cursive-text">Aiman & Azzalea</h1>
+			<p>We're getting married!</p>
+			<p>Save the date: TBD</p>
+		</header>
 
-<section>
-  <h2>Event Details</h2>
-  <p>Reception: TBD</p>
-  <p>Venue: TBD</p>
-</section>
+		<section>
+			<h2>Our Story</h2>
+			<p>Write your love story here...</p>
+		</section>
 
-<section>
-  <h2>RSVP</h2>
-  <p>Please fill in your details below.</p>
-  <form
-    class="rsvp-form"
-    action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
-    method="POST"
-    target="hidden_iframe"
-  >
-    <label for="guest-name">Name</label>
-    <input
-      id="guest-name"
-      name="entry.1111111111"
-      type="text"
-      required
-      placeholder="Your full name"
-    >
+		<section>
+			<h2>Event Details</h2>
+			<p>Reception: TBD</p>
+			<p>Venue: TBD</p>
+		</section>
 
-    <label for="pax">Number of Pax</label>
-    <input
-      id="pax"
-      name="entry.2222222222"
-      type="number"
-      min="1"
-      max="10"
-      required
-      placeholder="e.g. 2"
-    >
+		<section>
+			<h2>RSVP</h2>
+			<p>Please fill in your details below.</p>
+			<form
+				class="rsvp-form"
+				action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse"
+				method="POST"
+				target="hidden_iframe"
+			>
+				<label for="guest-name">Name</label>
+				<input
+					id="guest-name"
+					name="entry.1111111111"
+					type="text"
+					required
+					placeholder="Your full name"
+				>
 
-    <fieldset>
-      <legend>Will you attend?</legend>
-      <div class="radio-row">
-        <label>
-          <input type="radio" name="entry.3333333333" value="Yes" required>
-          Yes
-        </label>
-        <label>
-          <input type="radio" name="entry.3333333333" value="No" required>
-          No
-        </label>
-      </div>
-    </fieldset>
+				<label for="pax">Number of Pax</label>
+				<input
+					id="pax"
+					name="entry.2222222222"
+					type="number"
+					min="1"
+					max="10"
+					required
+					placeholder="e.g. 2"
+				>
 
-    <label for="notes">Notes</label>
-    <textarea
-      id="notes"
-      name="entry.4444444444"
-      rows="4"
-      required
-      placeholder="Any message for us"
-    ></textarea>
+				<fieldset>
+					<legend>Will you attend?</legend>
+					<div class="radio-row">
+					<label>
+						<input type="radio" name="entry.3333333333" value="Yes" required>
+						Yes
+					</label>
+					<label>
+						<input type="radio" name="entry.3333333333" value="No" required>
+						No
+					</label>
+					</div>
+				</fieldset>
 
-    <button type="submit">Submit RSVP</button>
-  </form>
+				<label for="notes">Notes</label>
+				<textarea
+					id="notes"
+					name="entry.4444444444"
+					rows="4"
+					required
+					placeholder="Any message for us"
+				></textarea>
 
-  <iframe name="hidden_iframe" title="Hidden RSVP Submit Frame" class="hidden-frame"></iframe>
+				<button type="submit">Submit RSVP</button>
+			</form>
 
-  <!-- <p class="form-help">
-    Replace YOUR_FORM_ID and each entry.xxxxx value with your Google Form field IDs.
-  </p> -->
-  <!-- <p class="form-help">
-    Prefer direct form link? <a href="https://forms.gle/your-form-link">Open RSVP form</a>
-  </p> -->
-</section>
+			<iframe name="hidden_iframe" title="Hidden RSVP Submit Frame" class="hidden-frame"></iframe>
 
-</body>
+		<!-- <p class="form-help">
+			Replace YOUR_FORM_ID and each entry.xxxxx value with your Google Form field IDs.
+		</p> -->
+		<!-- <p class="form-help">
+			Prefer direct form link? <a href="https://forms.gle/your-form-link">Open RSVP form</a>
+		</p> -->
+		</section>
+
+	</body>
 </html>
