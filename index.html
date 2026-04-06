@@ -35,13 +35,20 @@
 				method="POST"
 				target="hidden_iframe"
 			>
+
+				<!-- Google Forms form link:
+					name: entry.1498135098
+					attendance: entry.877086558
+					pax: entry.2606285
+					notes: entry.682894428
+				-->
 				<label for="guest-name">Name</label>
 				<input
 					id="guest-name"
 					name="entry.1498135098"
 					type="text"
 					required
-					placeholder="Your full name"
+					placeholder="Your name"
 				>
 
 				<fieldset>
@@ -66,7 +73,6 @@
 						type="number"
 						min="1"
 						max="10"
-						disabled
 						placeholder="e.g. 2"
 					>
 				</div>
@@ -76,8 +82,6 @@
 					id="notes"
 					name="entry.682894428"
 					rows="4"
-					required
-					placeholder="Any message for us"
 				></textarea>
 
 				<button type="submit">Submit RSVP</button>
@@ -97,7 +101,6 @@
 				const isAttending = selected && selected.value === 'Yes';
 
 				paxGroup.hidden = !isAttending;
-				paxInput.disabled = !isAttending;
 				paxInput.required = isAttending;
 
 				if (!isAttending) {
