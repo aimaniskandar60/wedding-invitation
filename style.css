@@ -87,6 +87,7 @@ section {
 .hero-rsvp-btn {
   position: relative;
   z-index: 1;
+  font-family: 'Lora', serif;
 }
 
 .hero-kicker {
@@ -150,7 +151,6 @@ a {
   max-width: 480px;
   margin: 24px auto 0;
   padding: 24px;
-  background-color: var(--panel);
   border: none;
   border-radius: 12px;
   text-align: left;
