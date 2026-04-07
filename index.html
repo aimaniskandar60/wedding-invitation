@@ -40,6 +40,7 @@
 					name: entry.1498135098
 					attendance: entry.877086558
 					pax: entry.2606285
+					phone number: entry.282845420
 					notes: entry.682894428
 				-->
 				<label for="guest-name">Name</label>
@@ -54,16 +55,26 @@
 				<fieldset>
 					<legend>Will you attend?</legend>
 					<div class="radio-row">
-					<label>
-						<input type="radio" name="entry.877086558" value="Yes" required>
-						Yes
-					</label>
-					<label>
-						<input type="radio" name="entry.877086558" value="No" required>
-						No
-					</label>
+						<label>
+							<input type="radio" name="entry.877086558" value="Yes" required>
+							Yes
+						</label>
+						<label>
+							<input type="radio" name="entry.877086558" value="No" required>
+							No
+						</label>
 					</div>
 				</fieldset>
+			
+				<div id="phone-number-group">
+					<label for="phone-number">Phone Number</label>
+					<input
+						id="phone-number"
+						name="entry.282845420"
+						type="tel"
+						pattern="^(?:01[0-9]\d{7,8}|\+601[0-9]\d{7,8}|601[0-9]\d{7,8})$"
+					>
+				</div>
 
 				<div id="pax-group" hidden>
 					<label for="pax">Number of Pax</label>
@@ -97,22 +108,30 @@
 			const attendanceInputs = document.querySelectorAll('input[name="entry.877086558"]');
 			const paxGroup = document.getElementById('pax-group');
 			const paxInput = document.getElementById('pax');
+			const phoneNumberGroup = document.getElementById('phone-number-group');
+			const phoneNumberInput = document.getElementById('phone-number');
 			let hasSubmitted = false;
 
-			function togglePaxField() {
+			function togglePaxAndNumberField() {
 				const selected = document.querySelector('input[name="entry.877086558"]:checked');
 				const isAttending = selected && selected.value === 'Yes';
 
+				// Show pax input if attending, hide otherwise. Also make it required if attending.
 				paxGroup.hidden = !isAttending;
 				paxInput.required = isAttending;
 
+				// Show phone number input if attending, hide otherwise. Also make it required if attending.
+				phoneNumberGroup.hidden = !isAttending;
+				phoneNumberInput.required = isAttending;
+
 				if (!isAttending) {
 					paxInput.value = '';
+					phoneNumberInput.value = '';
 				}
 			}
 
 			attendanceInputs.forEach((input) => {
-				input.addEventListener('change', togglePaxField);
+				input.addEventListener('change', togglePaxAndNumberField);
 			});
 
 			rsvpForm.addEventListener('submit', () => {
@@ -124,10 +143,12 @@
 					return;
 				}
 
-				window.location.href = 'thank-you.html';
+				const selected = document.querySelector('input[name="entry.877086558"]:checked');
+				const rsvp = selected && selected.value === 'Yes' ? 'yes' : 'no';
+				window.location.href = 'thank-you.html?rsvp=' + rsvp;
 			});
 
-			togglePaxField();
+			togglePaxAndNumberField();
 		</script>
 
 	</body>

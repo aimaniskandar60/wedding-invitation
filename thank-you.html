@@ -9,12 +9,23 @@
 	</head>
 
 	<body>
+		<!-- TODO: Have the messages be different based on RSVP response -->
 		<main class="thank-you-page">
 			<section class="thank-you-card">
 				<h1 class="cursive-text">Thank You</h1>
-				<p>Your RSVP has been received. We are so excited to celebrate with you.</p>
-				<a class="thank-you-link" href="index.html">Back to Invitation</a>
+				<p id="rsvp-message"></p>
 			</section>
 		</main>
+		<script>
+			const params = new URLSearchParams(window.location.search);
+			const rsvp = params.get('rsvp');
+			const messageEl = document.getElementById('rsvp-message');
+
+			if (rsvp === 'yes') {
+				messageEl.textContent = 'Your RSVP has been received. We are so excited to celebrate with you!';
+			} else {
+				messageEl.textContent = 'Your RSVP has been received. We will miss you, but thank you for letting us know!';
+			}
+		</script>
 	</body>
 </html>
