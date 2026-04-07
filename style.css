@@ -103,7 +103,7 @@ section {
   font-size: 8rem;
   line-height: 1;
   color: var(--accent);
-  text-shadow: 0 8px 20px rgba(20, 62, 58, 0.18);
+  text-shadow: 0 8px 20px rgba(6, 26, 24, 0.18);
 }
 
 .hero-date {
@@ -130,12 +130,10 @@ section {
 }
 
 .content-section {
-  max-width: 940px;
   margin: 26px auto;
-  border: 1px solid var(--panel-border);
+  border: none;
+  padding: 24px;
   border-radius: 18px;
-  background: rgba(255, 252, 246, 0.96);
-  backdrop-filter: blur(2px);
 }
 
 .content-section h2 {
@@ -153,7 +151,7 @@ a {
   margin: 24px auto 0;
   padding: 24px;
   background-color: var(--panel);
-  border: 1px solid var(--panel-border);
+  border: none;
   border-radius: 12px;
   text-align: left;
 }
