@@ -134,6 +134,7 @@ section {
   border: none;
   padding: 24px;
   border-radius: 18px;
+  font-family: "Lora", serif;
 }
 
 .content-section h2 {
@@ -175,7 +176,6 @@ a {
   border-radius: 8px;
   background-color: #fffefb;
   color: #3d4a47;
-  font-family: 'Georgia', serif;
   font-size: 1rem;
 }
 
@@ -213,7 +213,6 @@ a {
   padding: 12px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
   color: #fbf7ef;
-  font-family: 'Georgia', serif;
   font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
