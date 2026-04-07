@@ -48,7 +48,7 @@ section {
   padding: 0px;
   background: url('images/hero-banner.png') center/cover no-repeat;
   position: relative;
-  overflow: visible;
+  overflow: hidden;
   border-bottom: 2px solid rgba(63, 111, 138, 0.2);
 }
 
@@ -75,22 +75,23 @@ section {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  font-size: 1.75rem;
+  font-size: clamp(0.9rem, 1.8vw, 1.75rem);
   font-weight: bold;
 }
 
 .hero-names {
   margin: 0;
   padding: 50px 0px;
-  font-size: 12rem;
+  font-size: clamp(3rem, 13vw, 12rem);
   line-height: 1;
+  letter-spacing: -0.02em;
   color: var(--primary); 
   text-shadow: 10px 12px 6px rgba(63, 111, 138, 0.3);
 }
 
 .hero-date {
   margin: 0;
-  font-size: 1.75rem;
+  font-size: clamp(1rem, 2.2vw, 1.75rem);
   color: var(--accent);
   font-weight: bold;
 }
@@ -150,6 +151,7 @@ section {
   padding: 40px 20px;
   border-radius: 18px;
   font-family: "Lora", serif;
+  max-width: 980px;
 }
 
 body.js-animate .content-section {
@@ -188,8 +190,10 @@ a {
 
 .rsvp-form {
   max-width: 480px;
+  width: 100%;
   margin: 24px auto 0;
   padding: 24px;
+  box-sizing: border-box;
   border: none;
   border-radius: 12px;
   text-align: left;
@@ -325,30 +329,81 @@ a {
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 100vh;
-    min-height: 100svh;
-    gap: 12px;
-    padding: 52px 18px;
+    min-height: 90svh;
+    gap: 10px;
+    padding: 28px 16px;
+    background-position: center top;
+  }
+
+  .hero-overlay {
+    object-position: center top;
   }
 
   .hero-names {
-    font-size: 4.5rem;
+    font-size: clamp(2.8rem, 16vw, 4.6rem);
+    padding: 16px 0;
+    line-height: 0.95;
+    text-shadow: 5px 6px 4px rgba(63, 111, 138, 0.25);
+  }
+
+  .hero-kicker {
+    font-size: 0.86rem;
+    letter-spacing: 0.09em;
   }
 
   .hero-date {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
 
   .content-section {
-    margin: 20px 12px;
+    margin: 10px 0;
+    padding: 28px 12px;
+    border-radius: 0;
+  }
+
+  #rsvp .rsvp-form {
+    width: calc(100% - 4px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-section h2 {
+    padding: 8px;
+  }
+
+  .content-section p {
+    font-size: 1rem;
   }
 
   .rsvp-form {
-    padding: 18px;
+    padding: 16px;
+    max-width: 100%;
+  }
+
+  .rsvp-form input[type="text"],
+  .rsvp-form input[type="tel"],
+  .rsvp-form input[type="number"],
+  .rsvp-form textarea,
+  .rsvp-form button {
+    font-size: 16px;
   }
 
   .radio-row {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding: 24px 18px;
+  }
+
+  .hero-names {
+    letter-spacing: -0.01em;
+  }
+
+  .content-section {
+    margin: 12px auto;
   }
 }
