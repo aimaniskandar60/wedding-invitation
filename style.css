@@ -165,10 +165,6 @@ body.js-animate .content-section.is-visible {
   transform: translateY(0);
 }
 
-.content-section-final {
-  border-bottom: 2px solid rgba(63, 111, 138, 0.2);
-}
-
 .content-section h1 {
   color: var(--primary);
 }
@@ -236,6 +232,10 @@ a {
   border-radius: 8px;
   margin: 0 0 16px;
   padding: 12px;
+}
+
+.rsvp-form button {
+  font-family: "Lora", serif;
 }
 
 .radio-row {
