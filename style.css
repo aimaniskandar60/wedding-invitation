@@ -12,10 +12,7 @@ html {
 
 body {
   font-family: 'Georgia', serif;
-  background:
-    radial-gradient(circle at 10% 10%, rgba(77, 143, 168, 0.1), transparent 35%),
-    radial-gradient(circle at 86% 16%, rgba(63, 111, 138, 0.09), transparent 38%),
-    linear-gradient(180deg, #fbf6ec 0%, #f8f3e9 55%, #f5f0e5 100%);
+  background-color: #f8f3e8;
   color: var(--text);
   text-align: center;
   margin: 0;
@@ -27,8 +24,8 @@ body {
 }
 
 header {
-  background-color: #f1ebdf;
-  padding: 50px 20px;
+  background-color: transparent;
+  padding: 40px 20px;
 }
 
 h1 {
@@ -41,44 +38,19 @@ section {
 }
 
 .hero {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 14px;
-  padding: 64px 20px;
+  padding: 0px;
   color: var(--text);
-  background:
-    linear-gradient(160deg, rgba(251, 245, 234, 0.97), rgba(246, 239, 226, 0.96)),
-    radial-gradient(circle at 85% 25%, rgba(77, 143, 168, 0.14), transparent 46%);
+  background: transparent;
   position: relative;
-  overflow: hidden;
-}
-
-.hero::before,
-.hero::after {
-  content: '';
-  position: absolute;
-  border-radius: 999px;
-  pointer-events: none;
-}
-
-.hero::before {
-  width: 340px;
-  height: 340px;
-  background: rgba(77, 143, 168, 0.11);
-  top: -110px;
-  right: -70px;
-}
-
-.hero::after {
-  width: 260px;
-  height: 260px;
-  background: rgba(63, 111, 138, 0.1);
-  bottom: -80px;
-  left: -55px;
+  overflow: visible;
+  border-bottom: 2px solid rgba(63, 111, 138, 0.2);
 }
 
 .hero-kicker,
@@ -94,22 +66,24 @@ section {
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--accent);
-  font-size: 0.95rem;
+  font-size: 1.75rem;
   font-weight: bold;
 }
 
 .hero-names {
   margin: 0;
-  font-size: 8rem;
+  padding: 50px 0px;
+  font-size: 12rem;
   line-height: 1;
-  color: var(--accent);
-  text-shadow: 0 8px 20px rgba(6, 26, 24, 0.18);
+  color: var(--primary); 
+  text-shadow: 10px 12px 6px rgba(63, 111, 138, 0.3);
 }
 
 .hero-date {
   margin: 0;
-  font-size: 1.1rem;
-  color: #5c6f6b;
+  font-size: 1.75rem;
+  color: var(--accent);
+  font-weight: bold;
 }
 
 .hero-rsvp-btn {
@@ -132,13 +106,26 @@ section {
 .content-section {
   margin: 26px auto;
   border: none;
-  padding: 24px;
+  padding: 40px 20px;
   border-radius: 18px;
   font-family: "Lora", serif;
 }
 
+.content-section-final {
+  border-bottom: 2px solid rgba(63, 111, 138, 0.2);
+}
+
+.content-section h1 {
+  color: var(--primary);
+}
+
 .content-section h2 {
   color: var(--accent);
+  padding: 12px;
+}
+
+.content-section p {
+  font-size: 1.1rem;
 }
 
 a {
