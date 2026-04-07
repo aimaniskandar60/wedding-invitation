@@ -1,6 +1,6 @@
 :root {
-  --primary: #4d9b93;
-  --accent: #3f7f78;
+  --primary: #4d8fa8;
+  --accent: #3f6f8a;
   --text: #3f4d4a;
   --panel: #fffdf9;
   --panel-border: #e2d9cb;
@@ -13,8 +13,8 @@ html {
 body {
   font-family: 'Lora', serif;
   background:
-    radial-gradient(circle at 10% 10%, rgba(77, 155, 147, 0.1), transparent 35%),
-    radial-gradient(circle at 86% 16%, rgba(63, 127, 120, 0.09), transparent 38%),
+    radial-gradient(circle at 10% 10%, rgba(77, 143, 168, 0.1), transparent 35%),
+    radial-gradient(circle at 86% 16%, rgba(63, 111, 138, 0.09), transparent 38%),
     linear-gradient(180deg, #fbf6ec 0%, #f8f3e9 55%, #f5f0e5 100%);
   color: var(--text);
   text-align: center;
@@ -52,7 +52,7 @@ section {
   color: var(--text);
   background:
     linear-gradient(160deg, rgba(251, 245, 234, 0.97), rgba(246, 239, 226, 0.96)),
-    radial-gradient(circle at 85% 25%, rgba(77, 155, 147, 0.14), transparent 46%);
+    radial-gradient(circle at 85% 25%, rgba(77, 143, 168, 0.14), transparent 46%);
   position: relative;
   overflow: hidden;
 }
@@ -68,7 +68,7 @@ section {
 .hero::before {
   width: 340px;
   height: 340px;
-  background: rgba(77, 155, 147, 0.11);
+  background: rgba(77, 143, 168, 0.11);
   top: -110px;
   right: -70px;
 }
@@ -76,7 +76,7 @@ section {
 .hero::after {
   width: 260px;
   height: 260px;
-  background: rgba(63, 127, 120, 0.1);
+  background: rgba(63, 111, 138, 0.1);
   bottom: -80px;
   left: -55px;
 }
@@ -122,12 +122,12 @@ section {
   color: #fffdf8;
   font-weight: bold;
   text-decoration: none;
-  border: 2px solid rgba(63, 127, 120, 0.42);
+  border: 2px solid rgba(63, 111, 138, 0.42);
   box-shadow: 0 10px 24px rgba(20, 62, 58, 0.15);
 }
 
 .hero-rsvp-btn:hover {
-  background-color: #356d67;
+  background-color: #345f78;
 }
 
 .content-section {
@@ -184,7 +184,7 @@ a {
 .rsvp-form textarea:focus {
   outline: none;
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(77, 155, 147, 0.2);
+  box-shadow: 0 0 0 3px rgba(77, 143, 168, 0.2);
 }
 
 .rsvp-form fieldset {
