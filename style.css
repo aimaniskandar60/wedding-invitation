@@ -1,9 +1,9 @@
 :root {
-  --primary: #11b8ac;
-  --accent: #aa6aeb;
-  --text: #2f3c75;
-  --panel: #ffffff;
-  --panel-border: #d9d7e5;
+  --primary: #4d9b93;
+  --accent: #3f7f78;
+  --text: #3f4d4a;
+  --panel: #fffdf9;
+  --panel-border: #e2d9cb;
 }
 
 html {
@@ -13,9 +13,9 @@ html {
 body {
   font-family: 'Georgia', serif;
   background:
-    radial-gradient(circle at 8% 12%, rgba(17, 184, 172, 0.2), transparent 34%),
-    radial-gradient(circle at 88% 18%, rgba(170, 106, 235, 0.22), transparent 38%),
-    linear-gradient(180deg, #f8fbff 0%, #f7f5ff 50%, #f4fbfa 100%);
+    radial-gradient(circle at 10% 10%, rgba(77, 155, 147, 0.1), transparent 35%),
+    radial-gradient(circle at 86% 16%, rgba(63, 127, 120, 0.09), transparent 38%),
+    linear-gradient(180deg, #fbf6ec 0%, #f8f3e9 55%, #f5f0e5 100%);
   color: var(--text);
   text-align: center;
   margin: 0;
@@ -27,7 +27,7 @@ body {
 }
 
 header {
-  background-color: #dde5db;
+  background-color: #f1ebdf;
   padding: 50px 20px;
 }
 
@@ -41,17 +41,18 @@ section {
 }
 
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 14px;
   padding: 64px 20px;
-  color: #0d2a38;
+  color: var(--text);
   background:
-    linear-gradient(140deg, rgba(17, 184, 172, 0.85), rgba(170, 106, 235, 0.86)),
-    linear-gradient(20deg, #11b8ac, #aa6aeb);
+    linear-gradient(160deg, rgba(251, 245, 234, 0.97), rgba(246, 239, 226, 0.96)),
+    radial-gradient(circle at 85% 25%, rgba(77, 155, 147, 0.14), transparent 46%);
   position: relative;
   overflow: hidden;
 }
@@ -67,7 +68,7 @@ section {
 .hero::before {
   width: 340px;
   height: 340px;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(77, 155, 147, 0.11);
   top: -110px;
   right: -70px;
 }
@@ -75,7 +76,7 @@ section {
 .hero::after {
   width: 260px;
   height: 260px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(63, 127, 120, 0.1);
   bottom: -80px;
   left: -55px;
 }
@@ -92,23 +93,23 @@ section {
   margin: 0;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--accent);
   font-size: 0.95rem;
   font-weight: bold;
 }
 
 .hero-names {
   margin: 0;
-  font-size: clamp(3.2rem, 9vw, 6.1rem);
+  font-size: 8rem;
   line-height: 1;
-  color: #ffffff;
-  text-shadow: 0 8px 20px rgba(18, 30, 45, 0.26);
+  color: var(--accent);
+  text-shadow: 0 8px 20px rgba(20, 62, 58, 0.18);
 }
 
 .hero-date {
   margin: 0;
   font-size: 1.1rem;
-  color: #ecf7ff;
+  color: #5c6f6b;
 }
 
 .hero-rsvp-btn {
@@ -116,16 +117,16 @@ section {
   display: inline-block;
   padding: 12px 28px;
   border-radius: 999px;
-  background-color: #ffffff;
-  color: #6532a0;
+  background-color: var(--accent);
+  color: #fffdf8;
   font-weight: bold;
   text-decoration: none;
-  border: 2px solid rgba(255, 255, 255, 0.65);
-  box-shadow: 0 10px 24px rgba(27, 32, 51, 0.2);
+  border: 2px solid rgba(63, 127, 120, 0.42);
+  box-shadow: 0 10px 24px rgba(20, 62, 58, 0.15);
 }
 
 .hero-rsvp-btn:hover {
-  background-color: #f6efff;
+  background-color: #356d67;
 }
 
 .content-section {
@@ -133,12 +134,16 @@ section {
   margin: 26px auto;
   border: 1px solid var(--panel-border);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 252, 246, 0.96);
   backdrop-filter: blur(2px);
 }
 
+.content-section h2 {
+  color: var(--accent);
+}
+
 a {
-  color: #7a4ab8;
+  color: var(--accent);
   text-decoration: none;
   font-weight: bold;
 }
@@ -147,7 +152,7 @@ a {
   max-width: 480px;
   margin: 24px auto 0;
   padding: 24px;
-  background-color: #ffffff;
+  background-color: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 12px;
   text-align: left;
@@ -158,7 +163,7 @@ a {
   display: block;
   margin-bottom: 8px;
   font-weight: bold;
-  color: #2a2b3b;
+  color: #3b5550;
 }
 
 .rsvp-form input[type="text"],
@@ -169,10 +174,10 @@ a {
   box-sizing: border-box;
   margin-bottom: 16px;
   padding: 12px;
-  border: 1px solid #c8c6df;
+  border: 1px solid #d6ccbc;
   border-radius: 8px;
-  background-color: #fbfbff;
-  color: #393b4d;
+  background-color: #fffefb;
+  color: #3d4a47;
   font-family: 'Georgia', serif;
   font-size: 1rem;
 }
@@ -180,12 +185,12 @@ a {
 .rsvp-form input:focus,
 .rsvp-form textarea:focus {
   outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(170, 106, 235, 0.2);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(77, 155, 147, 0.2);
 }
 
 .rsvp-form fieldset {
-  border: 1px solid #d5d0ec;
+  border: 1px solid #ddd2c3;
   border-radius: 8px;
   margin: 0 0 16px;
   padding: 12px;
@@ -210,7 +215,7 @@ a {
   border-radius: 8px;
   padding: 12px;
   background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #ffffff;
+  color: #fbf7ef;
   font-family: 'Georgia', serif;
   font-size: 1rem;
   font-weight: bold;
@@ -243,7 +248,7 @@ a {
 .thank-you-card {
   width: 100%;
   max-width: 560px;
-  background-color: #ffffff;
+  background-color: var(--panel);
   border: 1px solid var(--panel-border);
   border-radius: 14px;
   padding: 36px 28px;
@@ -259,18 +264,23 @@ a {
   padding: 10px 16px;
   border-radius: 8px;
   border: 1px solid var(--primary);
-  background-color: #e7fbf9;
+  background-color: #edf5f3;
 }
 
 .thank-you-link:hover {
-  background-color: #d9f6f2;
+  background-color: #e2efec;
 }
 
 @media (max-width: 640px) {
   .hero {
-    min-height: 78vh;
+    min-height: 100vh;
+    min-height: 100svh;
     gap: 12px;
     padding: 52px 18px;
+  }
+
+  .hero-names {
+    font-size: 4.5rem;
   }
 
   .hero-date {
