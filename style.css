@@ -190,8 +190,6 @@ body.js-animate .content-section.is-visible {
 }
 
 .border-bottom {
-  /* content: ""; */
-  /* position: absolute; */
   left: 0;
   right: 0;
   top: 50%;
