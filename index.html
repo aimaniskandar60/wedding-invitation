@@ -85,8 +85,6 @@
       <p>4:00 PM</p>
     </section>
 
-    <div class="border-bottom"></div>
-
 	<section class="content-section">
       <h2>Wishes</h2>
       <div id="wishes-container" class="wishes-scroll">
@@ -123,7 +121,7 @@
           />
 
           <fieldset>
-            <legend>Will you attend?</legend>
+            <legend>Will you be able to attend?</legend>
             <div class="radio-row">
               <label>
                 <input
@@ -225,8 +223,8 @@
           // Filter for entries with wishes and extract them
 		  
           const wishes = data
-            .filter((row) => row["Leave a message"] && row["Leave a message"].trim())
-            .map((row) => ({ name: row["Name"], message: row["Leave a message"] }));
+            .filter((row) => row["message"] && row["message"].trim())
+            .map((row) => ({ name: row["name"], message: row["message"] }));
 
 			console.log("Extracted wishes:", wishes);
 

@@ -50,7 +50,6 @@ section {
   background: url('images/hero-banner.png') center/cover no-repeat;
   position: relative;
   overflow: hidden;
-  border-bottom: 2px solid var(--panel-border);
 }
 
 .hero-overlay {
@@ -111,7 +110,7 @@ section {
 }
 
 .hero-rsvp-btn:hover {
-  background-color: #345f78;
+  background-color: var(--primary);
 }
 
 @keyframes fadeUp {
@@ -191,7 +190,20 @@ body.js-animate .content-section.is-visible {
 }
 
 .border-bottom {
-  border-bottom: 2px solid var(--panel-border);
+  /* content: ""; */
+  /* position: absolute; */
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 15px;
+  background: linear-gradient(
+    90deg,
+    rgba(226, 217, 203, 0) 0%,
+    var(--primary) 25%,
+    var(--primary) 75%,
+    rgba(226, 217, 203, 0) 100%
+  );
 }
 
 a {
@@ -251,10 +263,6 @@ a {
   padding: 12px;
 }
 
-.rsvp-form button {
-  font-family: "Lora", serif;
-}
-
 .radio-row {
   display: flex;
   gap: 20px;
@@ -269,11 +277,12 @@ a {
 }
 
 .rsvp-form button {
+  font-family: "Lora", serif;
   width: 100%;
   border: 0;
   border-radius: 8px;
   padding: 12px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background: var(--primary);
   color: #fbf7ef;
   font-size: 1rem;
   font-weight: bold;
@@ -281,7 +290,7 @@ a {
 }
 
 .rsvp-form button:hover {
-  filter: brightness(0.95);
+  background: var(--secondary)
 }
 
 .hidden-frame {
