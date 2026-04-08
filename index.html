@@ -87,6 +87,15 @@
 
     <div class="border-bottom"></div>
 
+	<section class="content-section">
+      <h2>Guest Wishes</h2>
+      <div id="wishes-container" class="wishes-scroll">
+        <p class="loading-text">Loading wishes...</p>
+      </div>
+    </section>
+
+    <div class="border-bottom"></div>
+
     <section class="content-section" id="rsvp">
       <h2>RSVP</h2>
       <div id="rsvp-open-content">
@@ -181,6 +190,8 @@
       <p id="rsvp-closed-message" hidden>RSVP's are closed. Thank you.</p>
     </section>
 
+
+    
     <script>
       document.body.classList.add("js-animate");
 
@@ -201,7 +212,80 @@
       const phoneNumberInput = document.getElementById("phone-number");
       const revealSections = document.querySelectorAll(".content-section");
       const googleSheetsJSON = "https://opensheet.elk.sh/10yso2dRsM4EayqD_vAIVCiIoJBsnympwRAy8ou2AAoU/responses";
+      const wishesContainer = document.getElementById("wishes-container");
       let hasSubmitted = false;
+
+      async function loadAndDisplayWishes() {
+        try {
+          const response = await fetch(googleSheetsJSON);
+          const data = await response.json();
+
+		  console.log("Fetched wishes data:", data);
+
+          // Filter for entries with wishes and extract them
+		  
+          const wishes = data
+            .filter((row) => row["Leave a message"] && row["Leave a message"].trim())
+            .map((row) => ({ name: row["Name"], message: row["Leave a message"] }));
+
+			console.log("Extracted wishes:", wishes);
+
+          if (wishes.length === 0) {
+            wishesContainer.innerHTML =
+              '<p class="no-wishes">No wishes yet. Be the first to share!</p>';
+            return;
+          }
+
+          // Create wish items
+          const wishsHTML = wishes
+            .map(
+              (wish) =>
+                `<div class="wish-item">
+              <p class="wish-text">${escapeHtml(wish.message)}</p>
+			  <p class="wish-name">${escapeHtml(wish.name)}</p>
+            </div>`,
+            )
+            .join("");
+
+          wishesContainer.innerHTML = wishsHTML;
+
+          // Auto-scroll setup
+          let currentIndex = 0;
+          const items = wishesContainer.querySelectorAll(".wish-item");
+
+          if (items.length > 1) {
+            setInterval(() => {
+              items[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex + 1) % items.length;
+              items[currentIndex].classList.add("active");
+              items[currentIndex].scrollIntoView({
+                behavior: "smooth",
+                block: "nearest",
+              });
+            }, 3000); // Change wish every 5 seconds
+
+            // Set first item as active
+            if (items.length > 0) {
+              items[0].classList.add("active");
+            }
+          }
+        } catch (error) {
+          console.error("Error loading wishes:", error);
+          wishesContainer.innerHTML =
+            '<p class="error-text">Unable to load wishes at this time.</p>';
+        }
+      }
+
+      function escapeHtml(text) {
+        const map = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#039;",
+        };
+        return text.replace(/[&<>"']/g, (m) => map[m]);
+      }
 
       function isRsvpClosed() {
         if (!WEDDING_DATE_ISO) {
@@ -284,6 +368,9 @@
       if (audio) {
         audio.volume = 0.15;
       }
+
+      // Load wishes from Google Sheets
+      loadAndDisplayWishes();
 
     </script>
   </body>
